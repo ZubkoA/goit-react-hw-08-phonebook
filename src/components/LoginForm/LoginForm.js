@@ -11,7 +11,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     isAuth && navigate('/contact');
-  }, [isAuth]);
+  }, [isAuth, navigate]);
 
   const handleSubmit = e => {
     e.preventDefault();

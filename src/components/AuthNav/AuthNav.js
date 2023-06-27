@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 export const AuthNav = () => {
   // const { access_token: isAuth, profile } = useSelector(state => state.users);

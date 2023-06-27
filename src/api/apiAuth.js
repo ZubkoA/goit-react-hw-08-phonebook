@@ -17,7 +17,7 @@ export const login = async body => {
   return data;
 };
 // //запит на отримання даних користувача
-// export const getProfile = async () => {
-//   const { data } = await instance('/auth/profile');
-//   return data;
-// };
+export const getProfile = async () => {
+  const { data } = await instance('users/current');
+  return data;
+};

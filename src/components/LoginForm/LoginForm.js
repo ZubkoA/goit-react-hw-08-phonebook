@@ -1,25 +1,29 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 // import { toast } from 'react-hot-toast';
 import { loginThunk } from 'redux/auth/thunk';
 
 const LoginForm = () => {
+  const isAuth = useSelector(s => s.users.access_token);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    isAuth && navigate('/contact');
+  }, [isAuth]);
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    console.log(form.elements.password.value);
     dispatch(
       loginThunk({
         email: form.elements.email.value,
         password: form.elements.password.value,
-      }).unwrap()
+      })
     );
     form.reset();
-    navigate('/contact');
+    // navigate('/contact');
   };
   return (
     <div>

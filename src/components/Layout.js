@@ -1,6 +1,6 @@
 import { Navigation } from './Navigation/Navigation';
 import { Outlet } from 'react-router';
-import { useAuth } from 'components/hook';
+
 import { AuthNav } from './AuthNav/AuthNav';
 import { UserMenu } from './UserMenu/UserMenu';
 import { useSelector } from 'react-redux';

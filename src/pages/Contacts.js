@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import Header from 'components/Header';
 import AddContacts from 'components/AddContacts/AddContacts';
 import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactList/ContactList';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProfileThunk } from 'redux/auth/thunk';
+import { useDispatch } from 'react-redux';
 
 const Contacts = () => {
   // const { profile, access_token } = useSelector(s => s.users.profile);
   // console.log(profile);
-  const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatchEvent(getProfileThunk());

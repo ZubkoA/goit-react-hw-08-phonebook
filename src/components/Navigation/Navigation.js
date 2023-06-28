@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 // import { UserMenu } from 'components/UserMenu/UserMenu';
-import { AuthNav } from 'components/AuthNav/AuthNav';
+
 import { useSelector } from 'react-redux';
 
 export const Navigation = () => {

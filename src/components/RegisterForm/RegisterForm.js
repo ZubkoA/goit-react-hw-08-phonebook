@@ -1,12 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toast } from 'react-hot-toast';
+
 import { register } from 'redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();

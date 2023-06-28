@@ -10,7 +10,7 @@ import Contacts from 'pages/Contacts';
 import HomePage from 'pages/HomePage';
 import LoginPage from 'pages/LoginPage';
 import Register from 'pages/Register';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from './hook';

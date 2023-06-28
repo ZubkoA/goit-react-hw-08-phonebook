@@ -10,19 +10,57 @@ import Contacts from 'pages/Contacts';
 import HomePage from 'pages/HomePage';
 import LoginPage from 'pages/LoginPage';
 import Register from 'pages/Register';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshUser } from 'redux/auth/operations';
+import { useAuth } from './hook';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
 
 const App = () => {
+  const dispatch = useDispatch();
+  // const isRefreshing = useSelector(state => state.users.isRefreshing);
+  const { isRefreshing } = useAuth();
+  console.log(isRefreshing);
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <>
       <Toaster />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contact" element={<Contacts />} />
-        </Route>
-      </Routes>
+      {!isRefreshing && (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contact"
+                  component={<Register />}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contact"
+                  component={<LoginPage />}
+                />
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <PrivateRoute component={<Contacts />} redirectTo="/login" />
+              }
+            />
+          </Route>
+        </Routes>
+      )}
     </>
 
     // <div className={css.container}>

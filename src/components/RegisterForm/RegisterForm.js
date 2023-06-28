@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/thunk';
 import { toast } from 'react-hot-toast';
+import { register } from 'redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
@@ -18,8 +18,8 @@ const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    navigate('/');
-    toast.success('Sign Up successfully');
+    // navigate('/');
+    // toast.success('Sign Up successfully');
     form.reset();
   };
   return (

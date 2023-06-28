@@ -7,16 +7,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProfileThunk } from 'redux/auth/thunk';
 
 const Contacts = () => {
-  const { profile, access_token } = useSelector(s => s.users.profile);
-  console.log(profile);
+  // const { profile, access_token } = useSelector(s => s.users.profile);
+  // console.log(profile);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    access_token && dispatchEvent(getProfileThunk());
-  }, [access_token, dispatch]);
+  // useEffect(() => {
+  //   dispatchEvent(getProfileThunk());
+  // }, [dispatch]);
   return (
     <div>
-      {profile && <title>{profile.name} contacts</title>}
+      {/* {profile && <title>{profile.name} contacts</title>} */}
       <div>
         <Header title="Phonebook" />
         {<AddContacts />}

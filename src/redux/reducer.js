@@ -15,6 +15,6 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const reducer = combineReducers({
   contacts: contactReducer,
-  filter: filterReducer,
   users: persistedReducer,
+  filter: filterReducer,
 });

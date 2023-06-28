@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 // import { toast } from 'react-hot-toast';
-import { loginThunk } from 'redux/auth/thunk';
+import { logIn } from '../../redux/auth/operations';
 
 const LoginForm = () => {
   const isAuth = useSelector(s => s.users.access_token);
@@ -17,7 +17,7 @@ const LoginForm = () => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
-      loginThunk({
+      logIn({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })

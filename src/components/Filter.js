@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { filterValue } from 'redux/filter/filterReducer';
-import css from './Filter.module.css';
+import { Container, FormControl, FormLabel, Input } from '@chakra-ui/react';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -12,12 +12,20 @@ const Filter = () => {
     dispatch(filterValue(value));
   };
   return (
-    <form>
-      <label className={css.filter__text}>
-        Find contacts by name
-        <input type="text" name="filter" onChange={onChange} />
-      </label>
-    </form>
+    <Container mt={5}>
+      <FormControl>
+        <FormLabel as="i">
+          Find contact by name
+          <Input
+            mt={2}
+            type="text"
+            placeholder="Enter name of your contact"
+            name="filter"
+            onChange={onChange}
+          />
+        </FormLabel>
+      </FormControl>
+    </Container>
   );
 };
 Filter.propTypes = {

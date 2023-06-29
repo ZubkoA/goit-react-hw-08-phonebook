@@ -1,26 +1,25 @@
 // import React, { useEffect } from 'react';
 import Header from 'components/Header';
-import AddContacts from 'components/AddContacts/AddContacts';
-import Filter from 'components/Filter/Filter';
-import ContactList from 'components/ContactList/ContactList';
+import AddContacts from 'components/AddContacts';
+import Filter from 'components/Filter';
+import ContactList from 'components/ContactList';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from 'redux/contactPrivate/operations';
 
 const Contacts = () => {
-  // const { profile, access_token } = useSelector(s => s.users.profile);
-  // console.log(profile);
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatchEvent(getProfileThunk());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
   return (
     <div>
-      {/* {profile && <title>{profile.name} contacts</title>} */}
-      <div>
-        <Header title="Phonebook" />
-        {<AddContacts />}
-        <Filter />
-        <Header titleContacts="Contacts" />
-        <ContactList />
-      </div>
+      <Header title="Phonebook" />
+      {<AddContacts />}
+      <Filter />
+      <Header titleContacts="Contacts" />
+      <ContactList />
     </div>
   );
 };

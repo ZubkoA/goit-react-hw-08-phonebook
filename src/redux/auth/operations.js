@@ -65,15 +65,3 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
-
-// // //запит на отримання даних користувача
-// export const getProfile = async () => {
-//   const { data } = await instance.get('users/current');
-
-//   return data;
-// };
-// const userToken = state.users.access_token;
-// if (userToken === null) {
-//   return rejectWithValue('Unable to fetch user');
-// }
-// setToken(userToken);

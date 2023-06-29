@@ -1,11 +1,8 @@
+import { Container } from '@chakra-ui/react';
 import React from 'react';
 
 const HomePage = () => {
-  return (
-    <div>
-      <h1>Put log in for works</h1>
-    </div>
-  );
+  return <Container>☎</Container>;
 };
 
 export default HomePage;

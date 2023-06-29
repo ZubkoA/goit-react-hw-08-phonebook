@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Flex, Spacer, Container, Square, Link } from '@chakra-ui/react';
+import { Flex, Spacer, Container, Square } from '@chakra-ui/react';
 
 export const AuthNav = () => {
   return (

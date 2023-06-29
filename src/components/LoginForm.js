@@ -9,7 +9,6 @@ import {
   FormLabel,
   Input,
 } from '@chakra-ui/react';
-import { type } from '@testing-library/user-event/dist/type';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
